@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
 import CommunitiesPage from "./pages/CommunitiesPage";
 import ArticlesPage from "./pages/ArticlesPage";
+import CreateArticlePage from "./pages/CreateArticlePage";
 import MeetPage from "./pages/MeetPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/communities" element={<CommunitiesPage />} />
               <Route path="/articles" element={<ArticlesPage />} />
+              <Route path="/articles/create" element={<CreateArticlePage />} />
               <Route path="/meet" element={<MeetPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />

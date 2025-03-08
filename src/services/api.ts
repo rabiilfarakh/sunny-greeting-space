@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 // Définition de l'URL de base de l'API
-const API_URL = 'http://localhost:8080/api';
+const API_URL = '/api';
 
 // Configuration d'Axios avec l'URL de base
 const api = axios.create({
