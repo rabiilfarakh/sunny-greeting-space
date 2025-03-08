@@ -18,7 +18,9 @@ const ArticlesPage = () => {
       try {
         setIsLoading(true);
         const response = await articleService.getAllArticles();
-        setArticles(response.data);
+        // Assurez-vous que response.data est un tableau avant de l'affecter à articles
+        setArticles(Array.isArray(response.data) ? response.data : []);
+        console.log("Articles chargés:", response.data);
       } catch (error) {
         console.error("Erreur lors du chargement des articles:", error);
         toast({
@@ -26,6 +28,8 @@ const ArticlesPage = () => {
           description: "Impossible de charger les articles.",
           variant: "destructive",
         });
+        // En cas d'erreur, définir un tableau vide pour éviter les erreurs
+        setArticles([]);
       } finally {
         setIsLoading(false);
       }
