@@ -9,6 +9,7 @@ import Footer from "./components/layout/Footer";
 import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
 import CommunitiesPage from "./pages/CommunitiesPage";
+import CreateCommunityPage from "./pages/CreateCommunityPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CreateArticlePage from "./pages/CreateArticlePage";
 import MeetPage from "./pages/MeetPage";
@@ -29,6 +30,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/communities" element={<CommunitiesPage />} />
+              <Route path="/communities/create" element={<CreateCommunityPage />} />
               <Route path="/articles" element={<ArticlesPage />} />
               <Route path="/articles/create" element={<CreateArticlePage />} />
               <Route path="/meet" element={<MeetPage />} />

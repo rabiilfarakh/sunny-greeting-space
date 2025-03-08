@@ -17,7 +17,7 @@ const CommunityCard: React.FC<CommunityCardProps> = ({ community }) => {
         <CardTitle className="text-xl">{community.name}</CardTitle>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-gray-600 line-clamp-3">{community.description}</p>
+        <p className="text-gray-600 line-clamp-3">{community.description || "Aucune description disponible."}</p>
         <div className="mt-4 text-sm text-gray-500 flex items-center">
           <Users size={16} className="mr-1" />
           <span>Catégorie: {community.category || "Non spécifiée"}</span>

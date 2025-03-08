@@ -18,7 +18,9 @@ const CommunitiesPage = () => {
       try {
         setIsLoading(true);
         const response = await communityService.getAllCommunities();
-        setCommunities(response.data);
+        // Assurez-vous que response.data est un tableau avant de l'affecter
+        setCommunities(Array.isArray(response.data) ? response.data : []);
+        console.log("Communautés chargées:", response.data);
       } catch (error) {
         console.error("Erreur lors du chargement des communautés:", error);
         toast({
@@ -26,6 +28,8 @@ const CommunitiesPage = () => {
           description: "Impossible de charger les communautés.",
           variant: "destructive",
         });
+        // En cas d'erreur, définir un tableau vide pour éviter les erreurs
+        setCommunities([]);
       } finally {
         setIsLoading(false);
       }
@@ -36,7 +40,7 @@ const CommunitiesPage = () => {
 
   // Filtrer les communautés en fonction de la recherche
   const filteredCommunities = communities.filter(community => 
-    community.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    community.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     (community.description && community.description.toLowerCase().includes(searchQuery.toLowerCase()))
   );
 
