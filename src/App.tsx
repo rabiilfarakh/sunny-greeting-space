@@ -13,6 +13,8 @@ import CreateCommunityPage from "./pages/CreateCommunityPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CreateArticlePage from "./pages/CreateArticlePage";
 import MeetPage from "./pages/MeetPage";
+import CreateMeetPage from "./pages/CreateMeetPage";
+import MeetupDetailsPage from "./pages/MeetupDetailsPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 
@@ -34,6 +36,8 @@ const App = () => (
               <Route path="/articles" element={<ArticlesPage />} />
               <Route path="/articles/create" element={<CreateArticlePage />} />
               <Route path="/meet" element={<MeetPage />} />
+              <Route path="/meet/create" element={<CreateMeetPage />} />
+              <Route path="/meet/:id" element={<MeetupDetailsPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="*" element={<NotFound />} />

@@ -3,6 +3,8 @@ import React from 'react';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Clock, User } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from "@/hooks/use-toast";
 
 interface MeetupProps {
   id: number;
@@ -22,6 +24,22 @@ interface MeetupCardProps {
 }
 
 const MeetupCard: React.FC<MeetupCardProps> = ({ meetup }) => {
+  const navigate = useNavigate();
+
+  const handleJoin = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    toast({
+      title: "Succès",
+      description: "Vous avez rejoint la rencontre avec succès.",
+    });
+  };
+
+  const handleViewDetails = () => {
+    navigate(`/meet/${meetup.id}`);
+  };
+
   return (
     <Card className="h-full flex flex-col hover:shadow-md transition-shadow">
       <CardHeader>
@@ -44,8 +62,8 @@ const MeetupCard: React.FC<MeetupCardProps> = ({ meetup }) => {
         </div>
       </CardContent>
       <CardFooter className="pt-0 flex gap-2">
-        <Button variant="outline" className="flex-1">Voir détails</Button>
-        <Button className="flex-1">Rejoindre</Button>
+        <Button variant="outline" className="flex-1" onClick={handleViewDetails}>Voir détails</Button>
+        <Button className="flex-1" onClick={handleJoin}>Rejoindre</Button>
       </CardFooter>
     </Card>
   );
