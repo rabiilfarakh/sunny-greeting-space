@@ -9,8 +9,10 @@ import Footer from "./components/layout/Footer";
 import NotFound from "./pages/NotFound";
 import HomePage from "./pages/HomePage";
 import CommunitiesPage from "./pages/CommunitiesPage";
+import CommunityDetailsPage from "./pages/CommunityDetailsPage";
 import CreateCommunityPage from "./pages/CreateCommunityPage";
 import ArticlesPage from "./pages/ArticlesPage";
+import ArticleDetailsPage from "./pages/ArticleDetailsPage";
 import CreateArticlePage from "./pages/CreateArticlePage";
 import MeetPage from "./pages/MeetPage";
 import CreateMeetPage from "./pages/CreateMeetPage";
@@ -33,8 +35,10 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/communities" element={<CommunitiesPage />} />
               <Route path="/communities/create" element={<CreateCommunityPage />} />
+              <Route path="/communities/:id" element={<CommunityDetailsPage />} />
               <Route path="/articles" element={<ArticlesPage />} />
               <Route path="/articles/create" element={<CreateArticlePage />} />
+              <Route path="/articles/:id" element={<ArticleDetailsPage />} />
               <Route path="/meet" element={<MeetPage />} />
               <Route path="/meet/create" element={<CreateMeetPage />} />
               <Route path="/meet/:id" element={<MeetupDetailsPage />} />
